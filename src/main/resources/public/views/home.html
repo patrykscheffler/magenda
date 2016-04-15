@@ -1,0 +1,38 @@
+<div class="search-bar">
+    <div class="row">
+        <div class="col s12">
+            <div class="input-field">
+                <input name="q" type="search" placeholder="Search all meetings..." required="required" autocomplete="off" ng-model="search.input.$"/>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Location</th>
+                <th>Info</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr ng-repeat="event in events | orderBy: sortEvent | filter:search.input" ng-click="showEvent(event)">
+                <td>{{event.name}}</td>
+                <td>{{event.eventdate | date: 'MMM d, y'}}</td>
+                <td>{{event.eventtime | date: 'H:mm'}}</td>
+                <td>{{event.location}}</td>
+                <td><a ng-href="#/events/{{event.id}}" class="btn-floating green"><i class="material-icons">info</i></a></td>
+                <td><a ng-href="#/events/{{event.id}}/edit" class="btn-floating green"><i class="material-icons">edit</i></a></td>
+                <td><a ng-href="" ng-click="deleteEvent(event)" class="btn-floating green"><i class="material-icons">delete_sweep</i></a></td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,50 @@
+<h2>Edit Event</h2>
+<div class="row">
+    <form class="col s12" name="newEvent">
+        <div class="row">
+            <div class="input-field col s6">
+                <label for="name">Name</label>
+                <input class="form-control" type="text" id="name" name="name" ng-model="event.name" required>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s3">
+                <label for="date">Date (yyyy-mm-dd)</label>
+                <input class="form-control" type="text" id="date" name="date" ng-model="event.eventdate" pattern="\d{4}\-\d{1,2}\-\d{1,2}" required>
+            </div>
+
+            <div class="input-field col s3">
+                <label for="time">Time (hh:mm)</label>
+                <input class="form-control" type="text" id="time" name="time" ng-model="event.eventtime" pattern="\d{1,2}:\d{2}" required>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s6">
+                <label for="date">Duration</label>
+                <input class="form-control" type="text" id="duration" name="duration" ng-model="event.duration" pattern="\d+" required>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s6">
+                <label for="description">Location</label>
+                <input class="form-control" type="text" id="location" name="location" ng-model="event.location" required>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s6">
+                <label for="description">Description</label>
+                <textarea class="materialize-textarea" type="text" id="description" name="description" ng-model="event.description" required></textarea>
+            </div>
+        </div>
+
+
+
+
+
+        <input type="submit" value="{{isSubmitting ? 'saving...' : 'Save'}}" class="btn btn-default" ng-click="saveEvent(event)" ng-disabled="isSubmitting || newEvent.$invalid">
+    </form>
+</div>

@@ -1,0 +1,20 @@
+<h3>{{event.name}}</h3>
+<div class="row">
+    <strong>Description:</strong>
+    <p>{{event.description}}</p>
+</div>
+<div class="row">
+    <strong>Location:</strong>
+    <p>{{event.location}}</p>
+</div>
+<div class="row">
+    <strong>Date:</strong>
+    <p>{{event.eventdate}}</p>
+</div>
+<div class="row">
+    <strong>Time:</strong>
+    <p>{{event.eventtime}}</p>
+</div>
+
+<a ng-href="#/events/{{event.id}}/edit" class="btn-floating green"><i class="material-icons">edit</i></a>
+<a ng-href="" ng-click="deleteEvent(event)" class="btn-floating green"><i class="material-icons">delete_sweep</i></a>

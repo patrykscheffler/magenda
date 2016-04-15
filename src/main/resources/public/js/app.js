@@ -1,0 +1,1 @@
+angular.module('MeetingsAgenda', ['ngRoute', 'ngResource']);
